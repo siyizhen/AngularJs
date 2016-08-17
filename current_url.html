@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>$location获取当前地址测试</title>
+        <script type="text/javascript" src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    </head>
+    <div ng-app="myApp" ng-controller="myCtrl">
+			<ul>
+				<li>
+					获取当前的url地址：
+				</li>
+				<li>
+					{{current_url}}
+				</li>
+			</ul>
+		</div>
+    <body>
+    <script type="text/javascript">
+    	angular.module('myApp',[]).controller('myCtrl',function($scope,$location){
+    		$scope.current_url=$location.absUrl();
+    	});
+    </script>
+    </body>
+</html>

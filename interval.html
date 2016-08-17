@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>$interval测试</title>
+        <script type="text/javascript" src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    </head>
+    <body>
+    <div ng-app="myApp" ng-controller="myController">
+    	<ul>
+    		<li>系统时间显示：</li>
+    		<li>{{times}}</li>
+    	</ul>
+    </div>
+
+    <script type="text/javascript">
+    	angular.module('myApp',[]).controller('myController',function($scope,$interval){
+    		$scope.times=new Date().toLocaleString();
+    		$interval(function(){
+    			$scope.times=new Date().toLocaleString()
+    		},1000);
+    	})
+    </script>
+    </body>
+</html>

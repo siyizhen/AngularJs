@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>$timeout测试</title>
+        <script type="text/javascript" src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    </head>
+    <body>
+	<div ng-app="myApp" ng-controller="myController">
+		<ul>
+			<li>欢迎信息：3秒后刷新</li>
+			<li>{{welcomeinfo}}</li>
+		</ul>
+	</div>
+
+	<script type="text/javascript">
+		angular.module('myApp',[]).controller('myController',function($scope,$timeout){
+			$scope.welcomeinfo='欢迎您来测试！';
+			$timeout(function(){
+				$scope.welcomeinfo='这是几秒后的结果';
+			},3000);
+		});
+	</script>
+    </body>
+</html>

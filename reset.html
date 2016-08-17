@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta charset="utf-8">
+        <title>模块测试</title>
+        <script type="text/javascript" src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    </head>
+    <body>
+    <div ng-app="myApp" ng-controller="myController">
+    	<form novalidate>
+    		<input type="text" ng-model="user.firstName">
+    		<input type="text" ng-model="user.secondName">
+    		<input type="button" ng-click="reset()" value="重置">
+    	</form>
+
+    	<p>{{user}}</p>
+    </div>
+
+    <script type="text/javascript">
+    	angular.module('myApp',[]).controller('myController',function($scope){
+    		$scope.reset=function(){
+    			$scope.user={firstName:"wang",secondName:"zhongliang"}
+    		}
+    		$scope.reset();
+    	})
+    </script>
+    </body>
+</html>
